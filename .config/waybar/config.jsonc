@@ -1,0 +1,70 @@
+// ~/.config/waybar/config.json
+// Config by ami-chuu
+
+{ 
+  "layer": "top",
+  "position": "top",
+  "height": 44,
+  "spacing": 8,
+  "margin-top": 10,
+  "margin-left": 10,
+  "margin-right": 10,
+
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode"
+  ],
+
+  "modules-center": [ "sway/window" ],
+
+  "modules-right": [
+    "tray",
+    "wireplumber",
+    "network",
+    "clock"
+  ],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": false,
+    "format": "{name}"
+  },
+
+  "sway/mode": {
+    "format": "<span style=\"italic\">{}</span>"
+  },
+
+  "sway/window": {
+    "max-length": 60
+  },
+
+  "tray": {
+    "spacing": 8
+  },
+
+  "wireplumber": {
+    "format": " {icon} {volume}% ",
+    "format-muted": " ",
+    "format-icons": { 
+      "default": [
+       	" ",
+       	" ",
+       	" "
+    ]},
+    "on-click": "foot wiremix"
+  },
+
+  "network": {
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": " 󰌗  Connected ",
+    "format-disconnected": " 󰤭  disconnected",
+    "tooltip": true,
+    "tooltip-format-ethernet": "{ipaddr}/{cidr}" 
+  }, 
+
+  "clock": {
+    "format": " 󰥔  {:%H:%M} ",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>"
+  }
+
+}
