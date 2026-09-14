@@ -1,0 +1,55 @@
+/* ~/.config/waybar/style.css
+ * Config by ami-chuu */
+
+@define-color base #191724;
+@define-color overlay #26233a;
+@define-color text #e0def4;
+@define-color love #eb6f92;
+@define-color iris #c4a7e7;
+@define-color highlight-med #403d52;
+
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.modules-right { margin-right: 8px; }
+.modules-left { margin-left: 8px; }
+
+window#waybar {
+  background-color: @base;
+  color: @text;  
+}
+
+tooltip {
+  background-color: @overlay;
+  border: none;
+  border-radius: 0;
+}
+
+tooltip label { color: @text; }
+
+#workspaces button {
+  color: @text;
+  transition: none;
+}
+
+#workspaces button:hover {
+  background: @highlight-med;
+  border: none;
+  border-radius: 0;
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#workspaces button.empty { color: @overlay; }
+
+#workspaces button.focused {
+  border-bottom: 2px solid @iris;
+  color: @iris;
+}
+
+#network.ethernet { color: @iris; }
+#network.disabled { color: @love; }
+#network.disconnected { color: @love; }
